@@ -47,7 +47,7 @@ namespace WebUI.Class.Article_Grid.grid_stateful_server_csharp_backend
             {
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
-                    cmd.CommandText = string.Format("SELECT COUNT(id) FROM `extjs-training`.`app_state`  where state_user_id = '{0}'", stateData.UserId);
+                    cmd.CommandText = string.Format("SELECT COUNT(id) FROM `extjs-training`.`app_state`  where state_user_id = '{0}' and state_key = '{1}'", stateData.UserId, stateData.Key);
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.Connection = cn;
                     cn.Open();
